@@ -9,14 +9,29 @@ import { CartProvider } from './contexts/cart.context';
 
 import './index.scss';
 
+// const client = new ApolloClient({
+//   link: new HttpLink({
+//     uri: 'https://crwn-clothing.com/',
+//     fetchOptions: {
+//       mode: 'no-cors',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     }
+//   }),
+//   cache: new InMemoryCache(),
+// });
+
+const httpLink = new HttpLink({
+  uri: 'https://flyby-router-demo.herokuapp.com/',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
 const client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'https://crwn-clothing.com/',
-    fetchOptions: {
-      mode: 'no-cors'
-    }
-  }),
-  cache: new InMemoryCache(),
+  link: httpLink,
+  cache: new InMemoryCache()
 });
 
 

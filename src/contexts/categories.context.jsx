@@ -6,17 +6,13 @@ export const CategoriesContext = createContext({
 });
 
 const COLLECTIONS = gql`
-  query GetCollections {
-    collections {
+  query { 
+    locations {
       id
-      title
-      items {
-        id
-        name
-        price
-        imageUrl
-      }
-    }
+      name
+      description
+      photo
+    }  
   }
 `;
 
