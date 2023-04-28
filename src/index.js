@@ -24,6 +24,7 @@ import './index.scss';
 
 const httpLink = new HttpLink({
   uri: 'https://flyby-router-demo.herokuapp.com/',
+  // uri: 'https://crwn-clothing.com/',
   headers: {
     'Content-Type': 'application/json'
   }
